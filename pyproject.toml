@@ -1,27 +1,23 @@
-[tool.poetry]
-name = "py"
-version = "0.0.1"
-description = ""
-authors = ["Inom Turdikulov <inom@iturdikulov.com>"]
+[project]
+name = "python"
+version = "0.1.0"
+description = "General python project"
 readme = "README.md"
-license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "dearpygui>=2.1.0",
+    "obsws-python>=1.8.0",
+    "psutil>=7.0.0",
+    "pyqt6>=6.9.1",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
+[tool.ruff]
+line-length = 80
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.2"
-pydantic = "^2.9"
-requests = "^2.32"
-oauthlib = "^3.2.2"
-aiohttp = "^3.10.6"
-aio-pika = "^9.4.3"
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.ruff.format]
+quote-style = "double"
 
 [tool.basedpyright]
 # many settings are not enabled even in strict mode, which is why basedpyright
 # includes an "all" option you can then decide which rules you want to disable
-typeCheckingMode = "all"
+typeCheckingMode = "strict"
